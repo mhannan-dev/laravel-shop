@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use Illuminate\Http\Request;
-use DB;
-use App\Product;
-class PagesController extends Controller
+
+class BrandController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,7 @@ class PagesController extends Controller
      */
     public function index()
     {
-       
-        $products = Product::orderBy('id', 'desc')->get();
-        return view('shop.index')->with('products', $products);
-
+        //
     }
 
     /**
@@ -25,9 +22,9 @@ class PagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function contact()
+    public function create()
     {
-        return view('shop.contact');
+        //
     }
 
     /**
@@ -36,18 +33,18 @@ class PagesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function blog()
+    public function store(Request $request)
     {
-        return view('shop.blog');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Brand $brand)
     {
         //
     }
@@ -55,10 +52,10 @@ class PagesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Brand $brand)
     {
         //
     }
@@ -67,10 +64,10 @@ class PagesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Brand $brand)
     {
         //
     }
@@ -78,10 +75,10 @@ class PagesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Brand $brand)
     {
         //
     }

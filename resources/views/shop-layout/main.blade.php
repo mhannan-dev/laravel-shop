@@ -31,7 +31,35 @@
     <link rel="stylesheet" href="{{ URL::asset('//fonts.googleapis.com/css?family=Lato') }}">
     <link rel="stylesheet" href="{{ URL::asset('//fonts.googleapis.com/css?family=Raleway') }}">
 
-    
+    <style rel="stylesheet">
+    .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+	z-index: 3;
+	color: #fff;
+	cursor: default;
+	background-color: #f26969;
+	border-color: #db4c14;
+}
+
+.pagination > li > a, .pagination > li > span {
+	position: relative;
+	float: left;
+	padding: 6px 12px;
+	margin-left: -1px;
+	line-height: 1.42857143;
+	color: #bf4c13;
+	text-decoration: none;
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+	z-index: 2;
+	color: #952f07;
+	background-color: #eee;
+	border-color: #ddd;
+}
+
+    </style>
 
   </head>
   <body> 
@@ -118,7 +146,7 @@
               <!-- logo  -->
               <div class="aa-logo">
                 <!-- Text based logo -->
-                <a href="index.html">
+                <a href="#">
                   <span class="fa fa-shopping-cart"></span>
                   <p>daily<strong>Shop</strong> <span>Your Shopping Partner</span></p>
                 </a>

@@ -4,7 +4,7 @@
   <section id="aa-catg-head-banner">
    <img src="{{ URL::to('front/img/fashion/fashion-header-bg-8.jpg') }}" alt="fashion img">
    <div class="aa-catg-head-banner-area">
-     <div class="container">
+     <div class="container"></div>
       <div class="aa-catg-head-banner-content">
         <h2>Blog Archive</h2>
         <ol class="breadcrumb">
