@@ -14,3 +14,14 @@
 Route::get('/', 'PagesController@index')->name('index');
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::get('/blog', 'PagesController@blog')->name('blog');  
+
+
+Route::group(['prefix' => 'sadmin'], function(){
+
+    Route::get('/', 'AdminPagesController@index')->name('admin.index');
+    Route::get('/product/create', 'AdminPagesController@product_create')->name('admin.product.create');
+
+
+});
+
+

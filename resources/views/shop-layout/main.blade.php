@@ -146,12 +146,12 @@
               <!-- logo  -->
               <div class="aa-logo">
                 <!-- Text based logo -->
-                <a href="#">
+                <a href="{{ route('index')}}">
                   <span class="fa fa-shopping-cart"></span>
-                  <p>daily<strong>Shop</strong> <span>Your Shopping Partner</span></p>
+                  <p>laravel<strong>Shop</strong> <span>Your Shopping Partner</span></p>
                 </a>
-                <!-- img based logo -->
-                <!-- <a href="index.html"><img src="{{ URL::to('front/img/logo.jpg') }}" alt="logo img"></a> -->
+                
+
               </div>
               <!-- / logo  -->
                <!-- cart box -->
@@ -209,7 +209,8 @@
   </header>
   <!-- / header section -->
   <!-- menu -->
-  <section id="menu">
+
+<section id="menu">
     <div class="container">
       <div class="menu-area">
         <!-- Navbar -->
@@ -248,15 +249,8 @@
                   
                 </ul>
               </li>
-             <li><a href="blog-archive.html">Blog <span class="caret"></span></a>
-                <ul class="dropdown-menu">                
-                  <li><a href="blog-archive.html">Blog Style 1</a></li>
-                  <li><a href="blog-archive-2.html">Blog Style 2</a></li>
-                  <li><a href="blog-single.html">Blog Single</a></li>                
-                </ul>
-              </li>
-              
-              <li><a href="contact.html">Contact</a></li>
+             <li><a href="{{ route('blog')}}">Blog</a></li>
+             <li><a href="{{ route('contact')}}">Contact</a></li>
               
             </ul>
           </div><!--/.nav-collapse -->
