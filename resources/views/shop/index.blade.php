@@ -10,15 +10,15 @@
           <!-- Product -->
           <div class="col-md-3 text-center">
             <div class="card">
-            <!-- <img class="card-img-top" src="{{ URL::to('front/img/man/polo-shirt-2.png') }}" alt="Card image cap"> -->
-            
+          
               @php $i = 1;  @endphp
                 
 
              
               @foreach($product->images as $image)
                 @if($i>0)
-                <img class="card-img-top" src="{{ asset('front/img/man/'.$image->image)}}" alt="Card image cap">
+                <!-- <img class="card-img-top" src="{{ asset('front/img/man/'.$image->image)}}" alt="Card image cap"> -->
+                <img class="card-img-top" src="{{ asset('uploaded_img/products/'.$image->image)}}" alt="Card image cap">
                 @endif
                 @php $i --; @endphp
                   

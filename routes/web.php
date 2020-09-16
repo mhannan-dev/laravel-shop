@@ -1,5 +1,11 @@
 <?php
 
+if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
+    error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+}
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +25,9 @@ Route::get('/blog', 'PagesController@blog')->name('blog');
 Route::group(['prefix' => 'sadmin'], function(){
 
     Route::get('/', 'AdminPagesController@index')->name('admin.index');
-    Route::get('/product/create', 'AdminPagesController@product_create')->name('admin.product.create');
+    Route::get('/product/create', 'AdminPagesController@product_create')->name('product_create');
+    Route::post('/product/store', 'AdminPagesController@product_store')->name('product__store');
+
 
 
 });
