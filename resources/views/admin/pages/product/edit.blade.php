@@ -8,7 +8,7 @@
                        
 
                             <div class="col-lg-7">
-                             @include ('admin.partials.error')
+                             @include ('admin.partials.message')
 
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Edit Product</h3></div>

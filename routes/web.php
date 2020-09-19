@@ -10,34 +10,80 @@ if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
 */
 
-Route::get('/', 'PagesController@index')->name('index');
-Route::get('/contact', 'PagesController@contact')->name('contact');
-Route::get('/blog', 'PagesController@blog')->name('blog');  
+/*
+ Product/Pages Home Routes for front end
+*/
+Route::get('/', 'Frontend\PagesController@index')->name('home');
+
+Route::get('/contact', 'Frontend\PagesController@contact')->name('contact');
+Route::get('/blog', 'Frontend\PagesController@blog')->name('blog');
+
+
+/*
+ Product/Pages Home Routes for front end
+*/
+Route::get('/products', 'Frontend\ProductsController@index')->name('products');
+
+Route::get('product/{slug}', 'Frontend\ProductsController@show')->name('product_slug');
+
+
+
 
 
 Route::group(['prefix' => 'sadmin'], function(){
 
-    Route::get('/', 'AdminPagesController@index')->name('admin.index');
+    Route::get('/', 'Backend\PagesController@index')->name('admin.pages.index');
+        
+        /*
+        Product Routes for backend
+        */
 
-    Route::get('/products', 'AdminPagesController@manage_product')->name('admin_products');
+        Route::group(['prefix' => '/products'], function(){
+            Route::get('/', 'Backend\ProductsController@index')->name('admin_products');
 
-    Route::get('/product/create', 'AdminPagesController@product_create')->name('product_create');
+            Route::get('/create', 'Backend\ProductsController@create')->name('product_create');
 
-    Route::post('/product/store', 'AdminPagesController@product_store')->name('product__store');
-   
-    Route::post('/product/edit/{id}', 'AdminPagesController@product_update')->name('product_update');
-    
+            Route::post('/store', 'Backend\ProductsController@store')->name('product__store');
 
-    Route::get('/product/edit/{id}', 'AdminPagesController@product_edit')->name('product_edit');
-    
-   // Route::get('/product/edit', 'AdminPagesController@product_delete')->name('product_delete');
+            Route::post('/edit/{id}', 'Backend\ProductsController@update')->name('product_update');
+
+            Route::get('/edit/{id}', 'Backend\ProductsController@edit')->name('product_edit');
+
+            Route::post('/delete/{id}', 'Backend\ProductsController@delete')->name('product_delete');
+
+        });
+        /*
+        Product Routes end
+        */
+
+        /*
+        categories Routes for backend
+        */
+
+        Route::group(['prefix' => '/categories'], function(){
+            Route::get('/', 'Backend\CategoriesController@index')->name('category_list');
+
+            Route::get('/create', 'Backend\CategoriesController@create')->name('category_create');
+
+            Route::post('/store', 'Backend\CategoriesController@store')->name('category_store');
+
+            Route::post('/edit/{id}', 'Backend\CategoriesController@update')->name('category_update');
+
+            Route::get('/edit/{id}', 'Backend\CategoriesController@edit')->name('category_edit');
+
+            Route::post('/delete/{id}', 'Backend\CategoriesController@delete')->name('category_delete');
+
+        });
+        /*
+        categories Routes end
+        */
+
 
     
 
