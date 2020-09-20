@@ -12,18 +12,12 @@
             <div class="card">
           
               @php $i = 1;  @endphp
-                
-
-             
               @foreach($product->images as $image)
                 @if($i>0)
                 <!-- <img class="card-img-top" src="{{ asset('front/img/man/'.$image->image)}}" alt="Card image cap"> -->
                 <img class="card-img-top" src="{{ asset('uploaded_img/products/'.$image->image)}}" alt="Card image cap">
                 @endif
                 @php $i --; @endphp
-                  
-                
-              
               @endforeach
 
             <div class="card-body">
@@ -36,8 +30,8 @@
           <!-- Product -->
           @endforeach 
       </div>
+      {{ $products->links() }}
     </div>
   </section>
   <!-- / Products section -->
-
 @endsection

@@ -13,7 +13,7 @@ class PagesController extends Controller
     public function index()
     {
        
-        $products = Product::orderBy('id', 'desc')->get();
+        $products = Product::orderBy('id', 'desc')->paginate(1);
         return view('shop.pages.index')->with('products', $products);
 
     }
