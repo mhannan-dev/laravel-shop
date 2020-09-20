@@ -13,7 +13,7 @@ class PagesController extends Controller
 {
     public function index()
     {
-        return view('admin.pages.dashboard');
+        return view('backend.pages.index');
     }
 
 }
