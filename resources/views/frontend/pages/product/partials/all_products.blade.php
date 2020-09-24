@@ -12,10 +12,10 @@
         @endforeach
         <div class="card-body">
           <h4 class="card-title">
-            <a href="#">{{ $product->title }}</a>
+            <a href="{{ route('products.show',$product->slug) }}">{{ $product->title }}</a>
           </h4>
           <p class="card-text">Taka - {{ $product->price }}</p>
-          <a href="{{ route('products.show',$product->slug) }}" class="btn btn-outline-warning">Add to cart</a>
+          <a href="" class="btn btn-outline-warning">Add to cart</a>
         </div>
       </div>
     </div>

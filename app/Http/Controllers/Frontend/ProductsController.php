@@ -16,6 +16,7 @@ class ProductsController extends Controller
       //dd($products);
       return view('frontend.pages.product.index')->with('products', $products);
   }
+
   public function show($slug)
   {
       $product = Product::where('slug', $slug)->first();

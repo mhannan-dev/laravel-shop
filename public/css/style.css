@@ -20,3 +20,18 @@
   margin-top: 20px;
   background: #02aadd;
 }
+/*
+* Product CSS
+*/
+.product-item {
+  background: #02aadd;
+}
+
+.child-rows {
+    padding-left: 20px;
+    border-left: 1px solid #dfdfdf;
+    background: #FFF;
+}
+.child-rows a.list-group-item{
+  border-left: 0px!important;
+}
