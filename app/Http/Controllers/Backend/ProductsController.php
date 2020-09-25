@@ -31,30 +31,28 @@ class ProductsController extends Controller
 
   public function store(Request $request)
   {
-
     $request->validate([
       'title'         => 'required|max:150',
       'description'     => 'required',
       'price'             => 'required|numeric',
       'quantity'             => 'required|numeric',
+      'category_id'     => 'required|numeric',
+      'brand_id'     => 'required|numeric',
     ]);
 
-
-
     $product = new Product;
-
     $product->title = $request->title;
     $product->description = $request->description;
     $product->price = $request->price;
     $product->quantity = $request->quantity;
 
     $product->slug = str_slug($request->title);
-    $product->category_id = 1;
-    $product->brand_id = 1;
+    $product->category_id = $request->category_id;
+    $product->brand_id = $request->brand_id;
     $product->admin_id = 1;
     $product->save();
 
-    //ProductImage Model insert image
+    //ProductImage Model insert single image
 
     // if ($request->hasFile('product_image')) {
     //   //insert that image
@@ -95,6 +93,8 @@ class ProductsController extends Controller
       'description'     => 'required',
       'price'             => 'required|numeric',
       'quantity'             => 'required|numeric',
+      'category_id'     => 'required|numeric',
+      'brand_id'     => 'required|numeric',
     ]);
 
     $product = Product::find($id);
@@ -103,6 +103,8 @@ class ProductsController extends Controller
     $product->description = $request->description;
     $product->price = $request->price;
     $product->quantity = $request->quantity;
+    $product->category_id = $request->category_id;
+    $product->brand_id = $request->brand_id;
     $product->save();
 
     return redirect()->route('admin.products');

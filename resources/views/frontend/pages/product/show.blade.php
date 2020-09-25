@@ -40,7 +40,7 @@
 
       <div class="col-md-7">
         <div class="widget">
-          <h3>{{ $product->title }}</h3>
+          <h3>{{ $product->title }} <mark>{{ $product->category->name}}</mark></h3>
           <h3>BDT. {{ $product->price }} <span class="badge badge-warning">{{ $product->quantity < 1 ? 'No item avaliable' : $product->quantity. ' item in stock'}}</span></h3>
           <hr />
           <div>
