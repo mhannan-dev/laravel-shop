@@ -24,11 +24,17 @@ Route::get('/contact', 'Frontend\PagesController@contact')->name('contact');
  Product Routes
  All the routes for our product for frontend
 */
-Route::get('/products', 'Frontend\ProductsController@index')->name('products');
-Route::get('/product/{slug}', 'Frontend\ProductsController@show')->name('products.show');
+Route::group(['prefix' => 'products'], function(){
+Route::get('/', 'Frontend\ProductsController@index')->name('products');
+Route::get('/{slug}', 'Frontend\ProductsController@show')->name('products.show');
 Route::get('/search', 'Frontend\PagesController@search')->name('search');
 
 
+});
+// Category Routes
+
+Route::get('/categories', 'Frontend\CategoriesController@index')->name('categories.index');
+Route::get('/categories/{id}', 'Frontend\CategoriesController@show')->name('categories.show');
 
 
 // Admin Routes

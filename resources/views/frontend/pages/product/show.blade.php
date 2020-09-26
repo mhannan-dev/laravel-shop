@@ -26,21 +26,32 @@
             @endforeach;
           </div>
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-        </div>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+                </div>
+
+                <div>
+
+
+                <p>
+                  Category-<span class="badge badge-success">{{ $product->category->name}}</span>
+                  Brand-<span class="badge badge-warning">{{ $product->brand->name}}</span>
+                </p>
+
+
+                </div>
 
 
       </div>
 
       <div class="col-md-7">
         <div class="widget">
-          <h3>{{ $product->title }} <mark>{{ $product->category->name}}</mark></h3>
+          <h3>{{ $product->title }}</h3>
           <h3>BDT. {{ $product->price }} <span class="badge badge-warning">{{ $product->quantity < 1 ? 'No item avaliable' : $product->quantity. ' item in stock'}}</span></h3>
           <hr />
           <div>

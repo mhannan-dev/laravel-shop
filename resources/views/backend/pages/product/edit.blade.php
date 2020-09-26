@@ -32,14 +32,16 @@
             <div class="form-group">
               <label for="exampleInputEmail1">Select category for product</label>
               <select class="form-control" name="category_id">
-                  <option value="">Select</option>
-                  @foreach (App\Models\Category::orderBy('name', 'asc')->where('parent_id', NULL)->get() as $parent)
-                  <option value="{{$parent->id}}">{{ $parent->name }}</option>
-                    @foreach (App\Models\Category::orderBy('name', 'asc')->where('parent_id', $parent->id)->get() as $child)
-                      <option value="{{$child->id}}">---->{{ $child->name }}</option>
-                    @endforeach
+                <option value="">Please select a category for the product</option>
+                @foreach (App\Models\Category::orderBy('name', 'asc')->where('parent_id', NULL)->get() as $parent)
+                  <option value="{{ $parent->id }}" {{ $parent->id == $product->category->id ? 'selected': '' }}>{{ $parent->name }}</option>
+
+                  @foreach (App\Models\Category::orderBy('name', 'asc')->where('parent_id', $parent->id)->get() as $child)
+                    <option value="{{ $child->id }}"  {{ $child->id == $product->category->id ? 'selected': '' }}> ------> {{ $child->name }}</option>
+
                   @endforeach
 
+                @endforeach
               </select>
             </div>
 
@@ -47,8 +49,9 @@
               <label for="exampleInputEmail1">Select brand for product</label>
               <select class="form-control" name="brand_id">
                   <option value="{{ $product->brand_id }}">Select</option>
-                  @foreach (App\Models\Brand::orderBy('name', 'asc')->get() as $brand)
-                  <option value="{{$brand->id}}">{{ $brand->name }}</option>
+                  @foreach (App\Models\Brand::orderBy('name', 'asc')->get() as $br)
+
+                  <option value="{{ $br->id }}" {{ $br->id == $product->brand->id ? 'selected' : '' }}>{{ $br->name }}</option>
                   @endforeach
               </select>
             </div>

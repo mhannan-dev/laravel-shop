@@ -35,3 +35,9 @@
 .child-rows a.list-group-item{
   border-left: 0px!important;
 }
+.list-group-item.active {
+	z-index: 2;
+	color: #fff;
+	background-color: #6c9fd7;
+	border-color: #699bd0;
+}
