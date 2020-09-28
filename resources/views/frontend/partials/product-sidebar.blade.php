@@ -14,6 +14,7 @@
     " id="main-{{ $parent->id }}">
       <div class="child-rows">
         @foreach (App\Models\Category::orderBy('name', 'asc')->where('parent_id', $parent->id)->get() as $child)
+        
           <a href="{{ route ('categories.show', $child->id )}}" class="list-group-item list-group-item-action
             @if (Route::is('categories.show'))
               @if($child->id == $category->id)
