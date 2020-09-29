@@ -17,7 +17,6 @@
               <th>Division Name</th>
               <th>Action</th>
             </tr>
-
             @foreach ($districts as $district)
               <tr>
                 <td>#</td>

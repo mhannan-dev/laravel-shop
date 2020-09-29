@@ -19,6 +19,7 @@ class DistrictsController extends Controller
   public function create()
   {
     $divisions = Division::orderBy('priority', 'asc')->get();
+     
     return view('backend.pages.districts.create', compact('divisions'));
   }
 
